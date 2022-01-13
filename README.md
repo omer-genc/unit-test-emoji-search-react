@@ -10,14 +10,14 @@ import React from "react";
 import App from "./App";
 
 
-it("header should be rendered", () => {
+it("Header should be rendered successfully", () => {
   render(<App />);
   const header = document.querySelector("header");
   expect(header).toBeDefined();
 
 })
 
-it("should be emoji list item 20", () => {
+it("The emoji list should be rendered in a successfully", () => {
   render(<App />);
   const emojiRows = document.querySelectorAll(".component-emoji-result-row");
   const arr = [...emojiRows];
@@ -26,7 +26,7 @@ it("should be emoji list item 20", () => {
 })
 
 
-it("search emoji", () => {
+it("Filtering should work", () => {
   render(<App />);
   const input = document.querySelector("input");
   userEvent.type(input, "Smile")
@@ -36,7 +36,7 @@ it("search emoji", () => {
 
 })
 
-it("click and copy emoji",()=>{
+it("emoji copying should work",()=>{
   render(<App />);
   const itemToBeClicked = document.querySelector(".component-emoji-results").firstChild;
   document.execCommand = jest.fn();
